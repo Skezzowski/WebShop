@@ -1,0 +1,86 @@
+.login-register-wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .helpText {
+        flex-grow: 1;
+        padding: 10px;
+        background-color: #cccccc;
+        display: flex;
+        flex-direction: column;
+        .mainText {
+            &:hover {
+                cursor: default;
+            }
+            font-size: 20px;
+            font-weight: bold;
+            padding: 5px;
+            flex-grow: 1;
+        }
+        .instructionText {
+            &:hover {
+                cursor: default;
+            }
+            padding: 5px;
+            color: #676767;
+            flex-grow: 1;
+        }
+    }
+    .inputForm {
+        flex-grow: 4;
+        background-color: #dddddd;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        input {
+            flex-grow: 1;
+            padding: 10px 5px;
+            margin: 5px;
+            border: none;
+            outline: none;
+            box-sizing: border-box;
+            &.ng-touched.ng-invalid {
+                &:focus {
+                    border: none;
+                }
+                border: 1px;
+                border-style: solid;
+                border-color: red;
+            }
+        }
+        div { 
+            word-wrap: break-word;
+            flex-grow: 1;
+            margin: 5px;
+            color: red;
+        }
+        button {
+            flex-grow: 1;
+            color: white;
+            background-color: #999999;
+            padding: 10px 0;
+            margin: 5px;
+            border: none;
+            outline: none;
+            display: flex;
+            justify-content: center;
+            /* align horizontal */
+            align-items: center;
+            &:disabled {
+                opacity: 0.4;
+                &:hover {
+                    opacity: 0.4;
+                    cursor: default;
+                }
+            }
+            &:hover {
+                cursor: pointer;
+                opacity: 0.9;
+            }
+            &:active {
+                outline: none;
+            }
+        }
+    }
+}

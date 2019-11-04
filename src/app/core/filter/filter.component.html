@@ -1,0 +1,50 @@
+<div class="filter-wrapper">
+    <span class="price">Price</span>
+    <input
+        type="text"
+        name="minPrice" 
+        [(ngModel)]="filters.price.min"
+        placeholder="min">
+    <div class="priceArrow">
+        <img src="assets/arrow.png">
+    </div>
+    <input 
+        type="text" 
+        name="maxPrice"
+        [(ngModel)]="filters.price.max"
+        placeholder="max">
+    <div class="search-button" (click)="search()">
+        <img src="assets/search.png">
+    </div>
+    <div class="reset-button" (click)="reset()">
+        <img src="assets/reset.png">
+        <span>reset</span>
+    </div>
+    <div class="show-result">
+        <span>Showing results/page</span>
+        <select
+            class="selector" 
+            name="itemsPerPagesArray"
+            [(ngModel)]="filters.itemsPerPages"
+            (change)="onResultPerPagesChanged()">
+            <option 
+                *ngFor="let num of itemsPerPagesArray" 
+                [value]="num">
+                {{num}}
+            </option>
+        </select>   
+    </div>
+    <div class="select-sortType">
+        <select 
+            class="selector" 
+            [(ngModel)]="filters.sortBy"
+            name="sortTypesArray"
+            (change)="onSortingTypeChanged()">
+            <option 
+                *ngFor="let type of sortTypesArray" 
+                [value]="type">
+                {{type}}
+            </option>
+        </select>
+    </div>
+</div>

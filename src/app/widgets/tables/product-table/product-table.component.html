@@ -1,0 +1,24 @@
+<div class="product-table-wrapper" [class.full-page]="adminMode">
+  <div class="head">
+    <div class="table-name">
+      <div *ngIf="adminMode">Recently added</div>
+      <div *ngIf="!adminMode">Recently bought</div>
+    </div>
+    <div class="searchBox" *ngIf="adminMode">
+      <img src="assets/search.png">
+      <input placeholder="Search" (keyup)="fillProductsToDisplay($event.target.value)">
+    </div>
+  </div>
+
+  <div class="body">
+    <div *ngIf="adminMode" class="columns">
+      <div *ngFor="let header of headers">{{header}}</div>
+    </div>
+    <div class="products">
+      <ng-container *ngFor="let product of productsToDisplay">
+        <app-product-table-row [product]="product" [adminMode]="adminMode" (priceChange)="changePrice(product)"
+          (reviewStart)="review($event)"></app-product-table-row>
+      </ng-container>
+    </div>
+  </div>
+</div>

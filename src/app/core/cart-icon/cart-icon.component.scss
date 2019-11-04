@@ -1,0 +1,17 @@
+.cart-icon-wrapper{
+    display: flex;
+    align-items: center;
+    img{
+        max-height: 40px;
+        max-width: 40px;
+        cursor: pointer;
+    }
+    div{
+        background-color: #666666;
+        color: white;
+        border-radius: 20px;
+        padding: 5px;
+        margin: 5px;
+        cursor: default;
+    }
+}

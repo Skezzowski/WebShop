@@ -1,0 +1,9 @@
+<div class="profile-wrapper" *ngIf="user$ | async as user">
+  <div>
+    <app-user-details [user]="user"  (imgChange)="updateProfilePicture($event)"></app-user-details>
+    <app-product-table *ngIf="orders$ | async as orders" [products]="orders" [adminMode]="false"></app-product-table>
+  </div>
+  <div class="delivery-form">
+    <app-delivery-details [inDeliveryDetails]="user.deliveryDetails" (deliveryDetailsSubmit)="saveDeliveryDetails($event)"></app-delivery-details>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="user-details-wrapper" [class.wait] = "loading">
+  <div class="image-container">
+    <img [src]="user.img">
+    <input id="profile-picture-input" type="file" accept="image/jpeg image/jpg image/png" (change)="onPictureChange($event)">
+    <label for="profile-picture-input" class="fas fa-pencil-alt"></label>
+  </div>
+  <div class="info">
+    <div>{{user.email}}</div>
+    <div>
+      Password
+      <button class="editButton" (click)="showChangePasswordDialog()"><i class="fas fa-pencil-alt"></i></button>
+    </div>
+  </div>
+</div>

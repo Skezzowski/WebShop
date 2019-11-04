@@ -1,0 +1,21 @@
+<div class="main-page-wrapper">
+
+  <div class="filter">
+    <app-filter (filterChange)="onFilterChange($event)"></app-filter>
+  </div>
+  <div class="body">
+
+    <div class="categories" *ngIf="categories$ | async as categories">
+      <app-category-chooser [categories]="categories" [selectedCategory]="selectedCategory" (selectCategory)="selectCategory($event)"
+        (categoryClear)="removeCategorySelection()">
+      </app-category-chooser>
+    </div>
+
+    <div class="tiles" *ngIf="products$ | async as products">
+      <ng-container *ngFor="let product of products">
+        <app-tile [product]="product" (openProduct)="openProductPage(product.id)" (toCart)="addToCart(product)"></app-tile>
+      </ng-container>
+    </div>
+  </div>
+
+</div>

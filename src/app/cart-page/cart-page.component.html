@@ -1,0 +1,30 @@
+<div class="cart-page-wrapper full-page">
+  <div class="header">
+    <div (click)="back()" class="button back"> &lt;&lt; Continue shopping</div>
+    <div (click)="buy()" class="button buy">Buy it!</div>
+  </div>
+  <div class="table">
+    <div class="table-header">
+      <div></div>
+      <div>Name</div>
+      <div>Selling price</div>
+      <div>Amount</div>
+      <div>All</div>
+      <div></div>
+    </div>
+    <ng-container *ngIf="items$ | async as items">
+      <div class="row" *ngFor="let item of items; index as index">
+        <img [src]="item.img">
+        <div>{{item.name}}</div>
+        <div>{{item.price}}Ft</div>
+        <div class="amount">
+          <div class="amount-button" (click)="lessOf(item, index)">-</div>
+          <div class="amount-number">{{item.amount}}</div>
+          <div class="amount-button" (click)="moreOf(item, index)">+</div>
+        </div>
+        <div>{{item.price * item.amount}}Ft</div>
+        <img src="assets/trash-can.png" class="trash" (click)="removeItem(index)">
+      </div>
+    </ng-container>
+  </div>
+</div>

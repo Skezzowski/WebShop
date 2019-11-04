@@ -1,0 +1,22 @@
+<div class="user-table-wrapper full-page">
+  <div class="head">
+    <div class="table-name">
+      <div>Users</div>
+    </div>
+    <div class="searchBox">
+      <img src="assets/search.png">
+      <input placeholder="Search user" (keyup)="search($event.target.value)">
+    </div>
+  </div>
+
+  <div class="body" *ngIf="users$ | async as users">
+    <div class="columns">
+      <div *ngFor="let header of headers">{{header}}</div>
+    </div>
+    <div class="users">
+      <ng-container *ngFor="let user of users">
+        <app-user-table-row [user]="user" (userDelete)="deleteUser(user)" (permissionChange)="changeUserPermission(user)"></app-user-table-row>
+      </ng-container>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+.category-chooser-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    .category {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        margin-top: 10px;
+        &.selected {
+            font-weight: bold;
+        }
+        &:hover:not(.selected) {
+            color: #b1b1b1;
+        }
+    }
+    .clear {
+        height: 15px;
+        margin-left: 5px;
+    }
+}

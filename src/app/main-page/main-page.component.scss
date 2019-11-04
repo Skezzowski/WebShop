@@ -1,0 +1,30 @@
+.main-page-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .filter {
+        text-align: center;
+    }
+    .body {
+        display: flex;
+        flex-direction: row;
+        .categories {
+            flex: 1;
+        }
+        .tiles {
+            justify-content: center;
+            flex: 8;
+            display: grid;
+            grid-gap: 25px;
+            grid-template-columns: repeat(auto-fill, 200px);
+            grid-auto-rows: 1fr;
+            app-tile {
+                height: 350px;
+                transition: 0.3s all ease-in-out;
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+        } 
+    }
+}

@@ -1,0 +1,7 @@
+<div class="category-chooser-wrapper">
+  <div class="category" *ngFor="let category of categories" [class.selected]="selectedCategory === category">
+    <span (click)="onSelect(category)">{{category}}</span>
+    <img src="assets/x.png" *ngIf="selectedCategory === category" class="clear" (click)="clearCategory()">
+  </div>
+
+</div>

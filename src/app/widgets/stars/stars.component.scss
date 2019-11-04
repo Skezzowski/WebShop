@@ -1,0 +1,12 @@
+.stars-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .star {
+        max-width: 20px;
+        max-height: 20px;
+    }
+    .active{
+        cursor: pointer;
+    }
+}

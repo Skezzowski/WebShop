@@ -1,0 +1,59 @@
+.product-table-wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(192, 192, 192);
+    padding: 10px;
+    border-radius: 5px;
+    .head {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .table-name {
+            margin: 5px;
+            color: rgb(76, 76, 76);
+            font-weight: bold;
+        }
+        .searchBox {
+            display: flex;
+            margin: 10px;
+            border-radius: 20px;
+            padding: 3px;
+            align-items: center;
+            background: white;
+            min-height: 10px;
+            input {
+                outline: none;
+                border: none;
+            }
+            img {
+                height: 15px;
+            }
+        }
+    }
+    .body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        border-radius: 5px;
+        height: 100%;
+        overflow: hidden;
+        .columns {
+            display: grid;
+            grid-template-columns: 10% repeat(5, 18%);
+            text-align: center;
+            align-items: center;
+            width: 95%;
+            border-bottom: 2px solid;
+            color: rgb(76, 76, 76);
+            font-weight: bold;
+        }
+        .products {
+            display: flex;
+            flex-direction: column;
+            overflow: auto;
+            width: 95%;
+            height: 100%;
+        }
+    }
+}

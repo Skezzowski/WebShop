@@ -1,0 +1,48 @@
+.filter-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 5px;
+    .price {
+        align-self: center;
+        margin-left: 20px;
+    }
+    input[type=text] {
+        width: 5%;
+        height: 2em;
+        margin: 5px;
+        padding-left: 5px;
+        border-style: solid;
+        border-width: 1px;
+        outline: none;
+    }
+    .priceArrow {
+        margin-right: 2%;
+        margin-left: 2%;
+    }
+    .search-button {
+        display: flex;
+        align-self: center;
+        cursor: pointer;
+    }
+    .reset-button {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    .selector {
+        margin: 5px;
+        padding: 5px;
+        border-style: groove;
+        outline: none;
+    }
+    .show-result {
+        display: flex;
+        align-items: center;
+        margin-left: 20px;
+    }
+    .select-sortType {
+        display: flex;
+        align-items: center;
+    }
+}

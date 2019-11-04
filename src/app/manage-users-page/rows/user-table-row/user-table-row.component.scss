@@ -1,0 +1,23 @@
+.user-table-row-wrapper {
+    display: grid;
+    grid-template-columns: 10% repeat(5, 18%);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 2px solid rgb(76, 76, 76);
+    img {
+        height: 20px;
+        justify-self: center;
+    }
+    * {
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .delete, input {
+        cursor: pointer;
+        justify-self: center;
+    }
+}

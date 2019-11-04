@@ -1,0 +1,54 @@
+<div class="product-page-wrapper full-page" *ngIf="product$ | async as product">
+  <!-- new cell -->
+  <div class="product-name">{{product.name}}</div>
+  <div class="category">{{product.category}}</div>
+  <!-- new cell -->
+  <img class="first" [src]="product.img">
+  <div class="description second">{{product.description}}</div>
+  <!-- new cell -->
+  <div>
+    <div class="row">
+      <div class="first">Rating:</div>
+      <div *ngIf="!product.reviews">
+        No reviews yet
+      </div>
+      <div class="ratings" *ngIf="product.reviews">
+        <app-stars class="first" [stars]="product.rating"></app-stars>
+        <div>({{product.reviews.length}})</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="first">Price:</div>
+      <div>{{product.price}} Ft</div>
+    </div>
+    <div class="purchase row" (click)="addToCart(product)">PURCHASE</div>
+    <!--  <div class="rate-this" (click)="rateProduct()">Rate this product!</div> -->
+    <div class="back" (click)="back()">
+      &lt; Go back</div>
+  </div>
+  <!-- new cell -->
+  <div class="reviews">
+    <div class="reviews-header">Reviews:</div>
+    <div class="body" *ngIf="product.reviews">
+      <div class="review" *ngFor="let review of product.reviews">
+        <div class="row">
+          <div class="row first">{{review.reviewer}}</div>
+          <div class="row first">
+            <div class="first">Rating:</div>
+            <app-stars [stars]="review.stars"></app-stars>
+          </div>
+          <div class="row">
+            <div class="first">Date:</div>
+            <div>{{review.date | date}}</div>
+          </div>
+        </div>
+        <div class="review-text">
+          {{review.text}}
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!product.reviews">
+      NO REVIEW YET
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html {
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+app-root,
+body,
+html {
+    height: 100%;
+}
+app-root {
+    display: block;
+    width: 100%;
+}
+/*
+USEAGE:
+<div class="my-component-wrapper full-page"></div>
+This will make you component's height exactly 100%
+*/
+.full-page {
+    height: calc(100vh - 162px);
+}

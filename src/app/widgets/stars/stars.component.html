@@ -1,0 +1,5 @@
+<div class="stars-wrapper">
+  <ng-container *ngFor="let star of starImages; index as index">
+    <img class="star" [src]="star" (click)="putStar(index)" [class.active]="active">
+  </ng-container>
+</div>

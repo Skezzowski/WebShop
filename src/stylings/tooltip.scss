@@ -1,0 +1,26 @@
+/* https://www.w3schools.com/css/css_tooltip.asp */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 130px;
+    background-color: #999999;
+    color: #fff;
+    text-align: left;
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: 1px;
+    white-space: pre-wrap;
+
+    position: fixed;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}

@@ -1,0 +1,14 @@
+<div class="delivry-details-wrapper">
+  <div class="title">Delivery details</div>
+  <form class="inputForm" [formGroup]="frmDelivery" (submit)="onSave(frmDelivery.value)">
+    <input formControlName="name" placeholder='Full name'>
+    <input formControlName="country" placeholder='Country'>
+    <div>
+      <input formControlName="zipCode" placeholder='Zip Code'>
+      <input formControlName="city" placeholder='City'>
+    </div>
+    <input formControlName="address" placeholder='Address'>
+    <input formControlName="phoneNumber" placeholder='Phone number'>
+    <button type="submit" [disabled]="frmDelivery.invalid">Save</button>
+  </form>
+</div>

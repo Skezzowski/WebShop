@@ -1,0 +1,36 @@
+<div class='login-register-wrapper'>
+    <div class='helpText'>
+        <div class='mainText'>Sign up now</div>
+        <div class='instructionText'>Fill in the form below to get instant access</div>
+    </div>
+    <form class="inputForm" [formGroup]="frmSignup" (submit)="onRegister()">
+        <input type="email" formControlName="email" placeholder='e-mail address'>
+        <input type="password" formControlName="password" placeholder='password'>
+        <input type="password" formControlName="confirmPassword" placeholder='password again'>
+        <div *ngIf="frmSignup.controls['email'].hasError('email') && frmSignup.controls['email'].touched">
+            Invalid email format!
+        </div>
+        <div *ngIf="frmSignup.controls['password'].hasError('minlength') && frmSignup.controls['password'].touched">
+            Password has to be 8 characters long!
+        </div>
+        <div *ngIf="frmSignup.controls['password'].hasError('hasNumber') && frmSignup.controls['password'].touched">
+            Password has to contain 1 number!
+        </div>
+        <div *ngIf="frmSignup.controls['password'].hasError('hasSmallCase') && frmSignup.controls['password'].touched">
+            Password has to contain at least 1 lowercase character!
+        </div>
+        <div *ngIf="frmSignup.controls['password'].hasError('hasCapitalCase') && frmSignup.controls['password'].touched">
+            Password has to contain at least 1 uppercase character!
+        </div>
+        <div *ngIf="frmSignup.controls['confirmPassword'].hasError('NoPasswordMatch') && frmSignup.controls['confirmPassword'].touched">
+            Password does not match the confirm password!
+        </div>
+        <div *ngIf="emailUsedError">
+            Email is already in use!
+        </div>
+        <div *ngIf="regError">
+            Registration is failed!
+        </div>
+        <button [disabled]="frmSignup.invalid" type="submit">Sign up</button>
+    </form>
+</div>

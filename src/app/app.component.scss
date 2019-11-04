@@ -1,0 +1,26 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100%;
+    header {
+        position: fixed;
+        background-color: white;
+        width: 100%;
+        box-shadow: 0 1px 8px;
+        z-index: 1000;
+    }
+    main {
+        flex-grow: 1;
+        display: flex;
+        margin: 80px 0 20px;
+        width: 85%;
+        border: 1px solid;
+        padding: 20px;
+        min-height: calc(100vh - 142px);
+        ::ng-deep>*:not(router-outlet) {
+            flex-grow: 1;
+            width: 100%;
+        }
+    }
+}

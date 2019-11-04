@@ -1,0 +1,11 @@
+<div class="register-login-page-wrapper">
+    <div>
+        <app-login (login)="emailPassLogin($event)" [loginError]="loginError"></app-login>
+        <div>
+            ... or
+        </div>
+        <app-google-login (login)="googleLogin()"></app-google-login>
+    </div>
+    <hr>
+    <app-register (register)="registration($event)" [regError]="regError" [emailUsedError]="emailUsedError"></app-register>
+</div>

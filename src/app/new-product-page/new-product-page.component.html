@@ -1,0 +1,48 @@
+<div class="new-product-page-wrapper" *ngIf="categories$ | async as categories">
+  <div class="header">
+    <div class="mainText">Add product</div>
+    <img src="assets/upload-picture-icon.jpg" (click)="uploadImg.click()"> 
+    <input type="file" #uploadImg (change)="fileUpload($event)" accept="image/*">
+  </div>
+  <form class="inputForm" #form="ngForm" (ngSubmit)="onCreate(form)">
+    <input 
+      type="text" 
+      placeholder="Product name" 
+      ngModel 
+      required 
+      name="prodName" 
+      #prodName="ngModel">
+    <select 
+      ngModel 
+      required
+      name="prodCategory"
+      #prodCategory="ngModel">
+      <option value="">Choose a cetegory</option>
+      <option *ngFor="let category of categories">{{category}}</option>
+    </select>
+    <input 
+      type="number"
+      placeholder="Price" 
+      ngModel 
+      required
+      name="prodPrice" 
+      #prodPrice="ngModel"
+      [class.invalid]="prodPrice.touched && prodPrice.value < 1">
+    <input 
+      type="text" 
+      placeholder="Description" 
+      ngModel 
+      required
+      name="prodDescription" 
+      #prodDescription="ngModel">
+    <div *ngIf="(!prodName.value && prodName.touched) || 
+                (!prodDescription.value && prodDescription.touched) || 
+                (!prodCategory.value && prodCategory.touched)">Fill all the fields!</div>
+    <div *ngIf="prodName.touched && prodPrice.touched && 
+                prodDescription.touched && 
+                prodCategory.touched && file === undefined">Upload a picture!</div>
+    <div *ngIf="prodPrice.touched && prodPrice.value < 1">Price must be positive!</div>
+    <div *ngIf="success === false">Uploading error!</div>
+    <button type="submit" [disabled]="form.invalid || file === undefined || prodPrice.value < 1">Add product</button>
+  </form>
+</div>

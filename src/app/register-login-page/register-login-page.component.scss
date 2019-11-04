@@ -1,0 +1,28 @@
+:host {
+    align-self: center;
+}
+
+.register-login-page-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    min-height: 430px;
+    *:not(hr) {
+        flex: 1;
+        max-width: 380px;
+        margin: 20px;
+    }
+    div {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+        app-login {
+            width: 100%;
+        }
+    }
+    hr {
+        padding: 0;
+        margin: 5px;
+    }
+}

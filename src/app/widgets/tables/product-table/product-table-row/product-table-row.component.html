@@ -1,0 +1,27 @@
+<div class="product-table-row-wrapper" [class.admin]="adminMode">
+  <img [src]="product.img">
+  <div>{{product.name}}</div>
+  <div *ngIf="adminMode">
+    <div>{{product.category}}</div>
+  </div>
+  <div>{{product.date | date}}</div>
+  <div class="price" *ngIf="adminMode">
+    <input
+      type="number" 
+      min="1" 
+      oninput="validity.valid||(value='');" 
+      [(ngModel)]="product.price" 
+      [disabled]="disabled"
+    >
+    <div>Ft</div>
+  </div>
+  <div *ngIf="!adminMode">
+    <div>{{product.price}} Ft</div>
+  </div>
+  <div *ngIf="adminMode" class="edit"  (click)="editPrice()">
+    <i *ngIf="disabled" class="fas fa-pencil-alt"></i>
+    <i *ngIf="!disabled" class="fas fa-check"></i>
+  </div>
+  <button *ngIf="!adminMode" class="reviewButton" (click)="reviewProduct()">Review</button>
+
+</div>

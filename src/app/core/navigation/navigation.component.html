@@ -1,0 +1,11 @@
+<div class="navigation-wrapper">
+  <div class="left-menus menus">
+    <img class="logo" (click)="selectMenu('mainpage')" src="assets/logo.png">
+    <app-navigator [buttonTexts]="leftMenus" (menuSelect)="selectMenu($event)"></app-navigator>
+  </div>
+  <div class="right-menus menus">
+    <app-navigator [buttonTexts]="rightMenus" (menuSelect)="openPage($event)"></app-navigator>
+    <hr>
+    <app-cart-icon (cartOpen)="openCart()"></app-cart-icon>
+  </div>
+</div>

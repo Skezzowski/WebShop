@@ -1,0 +1,22 @@
+.google-login-wrapper {
+    display: flex;
+    width: 200px;
+    height: 50px;
+    .button {
+        border-radius: 5px;
+        box-shadow: 0px 0px 4px 0px;
+        display: flex;
+        justify-content: center;
+        background: white;
+        transition: 0.3s all ease-in-out;
+        img {
+            object-fit: contain;
+            max-width: 100%;
+            max-height: 100%;
+        }
+        &:hover {
+            cursor: pointer;
+            box-shadow: 0px 0px 10px 0px;
+        }
+    }
+}

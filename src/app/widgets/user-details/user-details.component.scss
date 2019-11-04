@@ -1,0 +1,64 @@
+.user-details-wrapper {
+  display: flex;
+  flex-direction: row;
+  background-color: #dddddd;
+  align-items: center;
+
+  .image-container {
+    position: relative;
+
+    img {
+      border-style: groove;
+      border-width: 1px;
+      margin: 15px;
+      max-width: 200px;
+      max-height: 200px;
+    }
+
+    input {
+      display: none;
+    }
+
+    label {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 80%;
+      left: 81%;
+      border-radius: 50%;
+      background-color: #ffffff;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      &:before {
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+
+  .info {
+    height: max-content;
+    background-color: #ffffff;
+    padding: 5px 10px;
+    margin: 15px;
+
+    div {
+      padding: 10px 0px;
+
+      button {
+        background-color: #ffffff;
+      }
+    }
+  }
+}
+
+.editButton {
+  border: none;
+  cursor: pointer;
+}
+
+.loading {
+  cursor: wait;
+}

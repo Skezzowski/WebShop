@@ -1,0 +1,8 @@
+<div class="user-table-row-wrapper">
+  <img src="{{user.img}}">
+  <div>{{user.name}}</div>
+  <div>{{user.numberOfOrders}}</div>
+  <div>{{user.lastOrder | date}}</div>
+  <input type="checkbox" [checked]="user.admin" (change)="changeUserPermission()">
+  <img class="delete" src="assets/trash-can.png" (click)="deleteUser()">
+</div>

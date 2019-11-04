@@ -1,0 +1,17 @@
+<div class="tiles-wrapper" (click)="openProductPage()">
+
+  <div class="product-image">
+    <img [src]="product.img">
+  </div>
+
+  <div class="details">
+    <div class="row">
+      <div class="name">{{product.name}}</div>
+      <div class="cart">
+        <img src="assets/cart.png" (click)="addToCart($event)">
+      </div>
+    </div>
+
+    <div class="row">{{product.price}} Ft</div>
+  </div>
+</div>

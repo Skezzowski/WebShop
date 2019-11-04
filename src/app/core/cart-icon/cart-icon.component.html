@@ -1,0 +1,4 @@
+<div class="cart-icon-wrapper">
+  <img src="assets/cart.png" (click)="cart()">
+  <div *ngIf="itemCount$ | async as itemCount">{{itemCount}}</div>
+</div>
